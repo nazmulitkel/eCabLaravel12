@@ -32,7 +32,7 @@
                             @enderror
                         </div>
                         <div class="mb-4">
-                        <label for="" class="form-label">Category Image</label>
+                        <label for="categoryImage" class="form-label">Category Image</label>
                         <div class="row">
                             <div class="col-6">
                                 <input type="file" name"image" id="categoryImage" class="form-control" onchange="document.getElementById('categoryImagePrv').src=window.URL.createObjectURL(this.files[0])">

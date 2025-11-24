@@ -16,9 +16,13 @@
 
 
 	<!-- inject:css -->
+  <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js
+"></script>
 	<link rel="stylesheet" href="{{asset('admin/assets/fonts/feather-font/css/iconfont.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
+
 	<!-- endinject -->
   <!-- Layout styles -->  
 	<link rel="stylesheet" href="{{asset('admin/assets/css/demo_1/style.css')}}">

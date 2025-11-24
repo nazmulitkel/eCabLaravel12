@@ -10,17 +10,17 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-    //  public function register(): void
-    // {
-    // //     //
-    //  }
-
-    public function register()
-        {
-    if ($this->app->bound(\App\Repositories\ProductRepository::class)) {
-        $this->app->unbind(\App\Repositories\ProductRepository::class);
+     public function register(): void
+    {
+    //     //
      }
-       }
+
+    // public function register()
+    //     {
+    // if ($this->app->bound(\App\Repositories\ProductRepository::class)) {
+    //     $this->app->unbind(\App\Repositories\ProductRepository::class);
+    //  }
+    //    }
 
 
     /**
@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
     
     public function boot()
         {
-    config([
+   // config([
         // 'repository.generator.paths.models' => 'Models',
         // 'repository.generator.stubs.model' => false,
         //  'repository.generator.paths.models' => 'Models', // Eloquent file কোথায় যাবে
@@ -44,106 +44,19 @@ class AppServiceProvider extends ServiceProvider
         // // এই config টি false করলে Eloquent file generate হবে না
         // 'repository.generator.stubs.model' => false,
                     // Eloquent model file generation বন্ধ
-            'repository.generator.stubs.repositoryEloquent' => false,
+            // 'repository.generator.stubs.repositoryEloquent' => false,
 
-            'repository.generator.stubs.model' => false,
+            // 'repository.generator.stubs.model' => false,
             
-            'repository.generator.stubs.entity' => false,
+            // 'repository.generator.stubs.entity' => false,
 
             // যদি আপনি চান, custom paths দিতে পারেন
-            'repository.generator.paths.models' => 'Models',
-            'repository.generator.paths.repositories' => 'Repositories',
+            // 'repository.generator.paths.models' => 'Models',
+            // 'repository.generator.paths.repositories' => 'Repositories',
             // 'repository.generator.paths.interfaces' => 'Repositories',
             // 'repository.generator.paths.criteria' => 'Repositories/Criteria',
             // 'repository.generator.paths.tests' => 'tests/Repositories',
-    ]);
+  //  ]);
     }
 }
 
-// or code chatGPT
-
-// <?php
-
-// namespace App\Providers;
-
-// use Illuminate\Support\ServiceProvider;
-// use Prettus\Repository\Generators\GeneratorsServiceProvider;
-
-
-// class AppServiceProvider extends ServiceProvider
-// {
-//     /**
-//      * Register any application services.
-//      */
-//     public function register()
-//     {
-//         // ProductRepository binding বন্ধ করতে
-//         if ($this->app->bound(\App\Repositories\ProductRepository::class)) {
-//             $this->app->unbind(\App\Repositories\ProductRepository::class);
-//         }
-//     }
-
-//     /**
-//      * Bootstrap any application services.
-//      */
-//     public function boot()
-//     {
-//         // Prettus\Repository configuration
-//         config([
-//             // Eloquent model file generation বন্ধ
-//             'repository.generator.stubs.model' => false,
-            
-//             // Entities file generation বন্ধ
-//             'repository.generator.stubs.entity' => false,
-
-//             // যদি আপনি চান, custom paths দিতে পারেন
-//             'repository.generator.paths.models' => 'Models',
-//             'repository.generator.paths.repositories' => 'Repositories',
-//             'repository.generator.paths.interfaces' => 'Repositories',
-//             'repository.generator.paths.criteria' => 'Repositories/Criteria',
-//             'repository.generator.paths.tests' => 'tests/Repositories',
-//         ]);
-//     }
-// }
-
-
-// chatGPT2 or
-
-// namespace App\Providers;
-
-// use Illuminate\Support\ServiceProvider;
-
-// class AppServiceProvider extends ServiceProvider
-// {
-//     /**
-//      * Register any application services.
-//      */
-//     public function register()
-//     {
-//         // পূর্বের ProductRepository binding বন্ধ করা
-//         if ($this->app->bound(\App\Repositories\ProductRepository::class)) {
-//             $this->app->unbind(\App\Repositories\ProductRepository::class);
-//         }
-//     }
-
-//     /**
-//      * Bootstrap any application services.
-//      */
-//     public function boot()
-//     {
-//         // Prettus\Repository generator সেটিংস পরিবর্তন
-//         config([
-//             // Eloquent implementation file generate বন্ধ
-//             'repository.generator.stubs.repositoryEloquent' => false,
-
-//             // Model / Entity file generate বন্ধ
-//             'repository.generator.stubs.model' => false,
-//             'repository.generator.stubs.entity' => false,
-
-//             // অন্য প্রয়োজনীয় customization এখানে করতে পারেন
-//             'repository.generator.paths.models' => 'Models',
-//             'repository.generator.paths.repositories' => 'Repositories',
-//             'repository.generator.paths.interfaces' => 'Repositories/Contracts',
-//         ]);
-//     }
-// }
