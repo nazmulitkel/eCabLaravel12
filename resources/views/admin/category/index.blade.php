@@ -41,7 +41,7 @@
                              @enderror
                         </div>
                             <div class="col-6">
-                                <img src="{{ asset('default.webp') }}" width="80" alt="" id="categoryImagePrv">
+                                <img src="{{ asset('default.webp') }}" width="80" class="mb-2" alt="" id="categoryImagePrv">
                             </div>
                         </div>
                         </div>

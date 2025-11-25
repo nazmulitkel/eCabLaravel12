@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Category extends Model
@@ -14,10 +16,10 @@ class Category extends Model
 
     static::creating(function($category){
         if (empty($category->slug)){
-            $baseSlug = Str::slug ($category->name);
+            $baseSlug = Str::slug($category->name);
             $slug = $baseSlug;
             $count = 1;
-            while(Category::where('slug',$slug)->exists()){
+            while(Category::where('slug', $slug)->exists()){
                 $slug = $baseSlug . '-' . $count++;
             }
             $category->slug = $slug;

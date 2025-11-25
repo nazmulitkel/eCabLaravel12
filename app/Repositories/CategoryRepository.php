@@ -2,8 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Models\Category;
 use Arafat\LaravelRepository\Repository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryRepository extends Repository
 {
@@ -23,7 +25,7 @@ class CategoryRepository extends Repository
         $thumbnail = null;
         if($request->hasFile('image')){
             $thumbnail = (new MediaRepository())->storeByRequest($request->file('image'), 'category');
-            //  $dd($media);
+            //   dd($thumbnail);
         }
       return self::create([
             'name' => $request->name,

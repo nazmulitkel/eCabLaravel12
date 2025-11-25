@@ -2,8 +2,11 @@
 
 namespace App\Repositories;
 
+use App\Models\Media;
 use Arafat\LaravelRepository\Repository;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class MediaRepository extends Repository
 {
@@ -21,13 +24,13 @@ class MediaRepository extends Repository
     {
         $path = Storage::disk('public')->put('/' . trim($path, '/'), $file);
         $extension = $file->extension();
-        if (! $type){
-            $type =in_array($extension,['jpeg','jpg','png','gif','svg','webp',]) ? 'image' : extension;
+        if (!$type){
+            $type = in_array($extension, ['jpeg','jpg','png','gif','svg','webp',]) ? 'image' : $extension;
         }
        $media = self::create([
         'type' => $type,
         'src' => $path,
-        'name' => $file->getclientOriginalName(),
+        'name' => $file->getClientOriginalName(),
         'extension' => $extension,
             
        ]);
