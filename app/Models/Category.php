@@ -11,8 +11,23 @@ class Category extends Model
 {
    protected $guarded = ['id'];
 
+    public function media(){
+        return $this->belongsTo(Media::class);
+    }
+
+    public function thumbnail(): Attribute
+    {
+        $src = asset('default.webp');
+        if ($this->media && Storage::exists($this->media->src)) {
+            $src = Storage::url($this->media->src);
+        }
+        return Attribute::make(
+            get: fn () => $src,
+        );
+    }
+
    protected static function boot(){
-    prarent::boot();
+    parent::boot();
 
     static::creating(function($category){
         if (empty($category->slug)){
@@ -23,7 +38,6 @@ class Category extends Model
                 $slug = $baseSlug . '-' . $count++;
             }
             $category->slug = $slug;
-
         }else {
             $category->slug = Str::slug($category->name);
         }

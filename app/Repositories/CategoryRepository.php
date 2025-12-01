@@ -24,8 +24,8 @@ class CategoryRepository extends Repository
         // dd($request->name);
         $thumbnail = null;
         if($request->hasFile('image')){
-            $thumbnail = (new MediaRepository())->storeByRequest($request->file('image'), 'category');
-            //   dd($thumbnail);
+            $thumbnail = MediaRepository::storeByRequest($request->file('image'), 'category');
+            //  dd($thumbnail);
         }
       return self::create([
             'name' => $request->name,
@@ -33,4 +33,27 @@ class CategoryRepository extends Repository
             'media_id' => $thumbnail?->id ?? null,
        ]);
     } 
+
+
+ 
+     public static function updateByRequest($request, Category $category): Category
+    {
+        $media = $category->media;
+        if($request->hasFile('image')){
+            if ($category->media && Storage::exists($category?->media?->src)) {
+                $media = MediaRepository::updateByRequest($request->file('image'), 'category', 'image', $category->media);
+            }else{
+                $media = MediaRepository::storeByRequest($request->file('image'), 'category', 'image');
+            }
+        }
+
+        $category->update([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'media_id' => $media?->id ?? null,
+        ]);
+
+        return $category;
+    }
+
 }

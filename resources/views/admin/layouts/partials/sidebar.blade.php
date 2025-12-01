@@ -60,9 +60,24 @@
             </a>
             <div class="collapse" id="uiComponents">
               <ul class="nav sub-menu">
-                <li class="nav-item">
+                <li class="nav-item {{ request()->routeIs('category.*') ? 'active' : '' }}">
                   <a href="{{ route('category.index') }}" class="nav-link">Category</a>
                 </li>
+                <li class="nav-item {{ request()->routeIs('subCategory.*') ? 'active' : '' }}">
+                                    <a href="{{ route('subCategory.index') }}" class="nav-link">Sub Category</a>
+                                </li>
+                                {{-- <li class="nav-item {{ request()->routeIs('brand.*') ? 'active' : '' }}">
+                                    <a href="{{ route('brand.index') }}" class="nav-link">Brand</a>
+                                </li>
+                                <li class="nav-item {{ request()->routeIs('color.*') ? 'active' : '' }}">
+                                    <a href="{{ route('color.index') }}" class="nav-link">Color</a>
+                                </li>
+                                <li class="nav-item {{ request()->routeIs('size.*') ? 'active' : '' }}">
+                                    <a href="{{ route('size.index') }}" class="nav-link">Size</a>
+                                </li>
+                                <li class="nav-item {{ request()->routeIs('tag.*') ? 'active' : '' }}">
+                                    <a href="{{ route('tag.index') }}" class="nav-link">Tags</a>
+                                </li> --}}
                 <!-- <li class="nav-item">
                   <a href="pages/ui-components/badges.html" class="nav-link">Badges</a>
                 </li>

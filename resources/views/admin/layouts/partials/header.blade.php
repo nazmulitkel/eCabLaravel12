@@ -60,7 +60,7 @@
 								<div class="dropdown-body">
 									<a href="javascript:;" class="dropdown-item">
 										<div class="figure">
-											<img src="https://via.placeholder.com/30x30" alt="userr">
+											{{-- <img src="https://via.placeholder.com/30x30" alt="userr"> --}}
 										</div>
 										<div class="content">
 											<div class="d-flex justify-content-between align-items-center">
@@ -72,7 +72,7 @@
 									</a>
 									<a href="javascript:;" class="dropdown-item">
 										<div class="figure">
-											<img src="https://via.placeholder.com/30x30" alt="userr">
+											{{-- <img src="https://via.placeholder.com/30x30" alt="userr"> --}}
 										</div>
 										<div class="content">
 											<div class="d-flex justify-content-between align-items-center">
@@ -84,7 +84,7 @@
 									</a>
 									<a href="javascript:;" class="dropdown-item">
 										<div class="figure">
-											<img src="https://via.placeholder.com/30x30" alt="userr">
+											{{-- <img src="https://via.placeholder.com/30x30" alt="userr"> --}}
 										</div>
 										<div class="content">
 											<div class="d-flex justify-content-between align-items-center">
@@ -96,7 +96,7 @@
 									</a>
 									<a href="javascript:;" class="dropdown-item">
 										<div class="figure">
-											<img src="https://via.placeholder.com/30x30" alt="userr">
+											{{-- <img src="https://via.placeholder.com/30x30" alt="userr"> --}}
 										</div>
 										<div class="content">
 											<div class="d-flex justify-content-between align-items-center">
@@ -108,7 +108,7 @@
 									</a>
 									<a href="javascript:;" class="dropdown-item">
 										<div class="figure">
-											<img src="https://via.placeholder.com/30x30" alt="userr">
+											{{-- <img src="https://via.placeholder.com/30x30" alt="userr"> --}}
 										</div>
 										<div class="content">
 											<div class="d-flex justify-content-between align-items-center">
@@ -190,12 +190,12 @@
 						</li>
 						<li class="nav-item dropdown nav-profile">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src="https://via.placeholder.com/30x30" alt="profile">
+								{{-- <img src="https://via.placeholder.com/30x30" alt="profile"> --}}
 							</a>
 							<div class="dropdown-menu" aria-labelledby="profileDropdown">
 								<div class="dropdown-header d-flex flex-column align-items-center">
 									<div class="mb-3 figure">
-										<img src="https://via.placeholder.com/80x80" alt="">
+										{{-- <img src="https://via.placeholder.com/80x80" alt=""> --}}
 									</div>
 									<div class="text-center info">
 										<p class="mb-0 name font-weight-bold">Amiah Burton</p>
