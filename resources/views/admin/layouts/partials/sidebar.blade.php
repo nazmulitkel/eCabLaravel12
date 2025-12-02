@@ -66,7 +66,7 @@
                 <li class="nav-item {{ request()->routeIs('subCategory.*') ? 'active' : '' }}">
                                     <a href="{{ route('subCategory.index') }}" class="nav-link">Sub Category</a>
                                 </li>
-                                {{-- <li class="nav-item {{ request()->routeIs('brand.*') ? 'active' : '' }}">
+                                <li class="nav-item {{ request()->routeIs('brand.*') ? 'active' : '' }}">
                                     <a href="{{ route('brand.index') }}" class="nav-link">Brand</a>
                                 </li>
                                 <li class="nav-item {{ request()->routeIs('color.*') ? 'active' : '' }}">
@@ -77,71 +77,35 @@
                                 </li>
                                 <li class="nav-item {{ request()->routeIs('tag.*') ? 'active' : '' }}">
                                     <a href="{{ route('tag.index') }}" class="nav-link">Tags</a>
-                                </li> --}}
-                <!-- <li class="nav-item">
-                  <a href="pages/ui-components/badges.html" class="nav-link">Badges</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/breadcrumbs.html" class="nav-link">Breadcrumbs</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/buttons.html" class="nav-link">Buttons</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/button-group.html" class="nav-link">Button group</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/cards.html" class="nav-link">Cards</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/carousel.html" class="nav-link">Carousel</a>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/ui-components/collapse.html" class="nav-link">Collapse</a>
-                  </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/dropdowns.html" class="nav-link">Dropdowns</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/list-group.html" class="nav-link">List group</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/media-object.html" class="nav-link">Media object</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/modal.html" class="nav-link">Modal</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/navs.html" class="nav-link">Navs</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/navbar.html" class="nav-link">Navbar</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/pagination.html" class="nav-link">Pagination</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/popover.html" class="nav-link">Popovers</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/progress.html" class="nav-link">Progress</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/scrollbar.html" class="nav-link">Scrollbar</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/scrollspy.html" class="nav-link">Scrollspy</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/spinners.html" class="nav-link">Spinners</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/ui-components/tooltips.html" class="nav-link">Tooltips</a>
-                </li> -->
+                                </li>
+                
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#advancedUI" role="button"
+                            aria-expanded="false" aria-controls="advancedUI">
+                            <i class="link-icon" data-feather="anchor"></i>
+                            <span class="link-title">Products</span>
+                            <i class="link-arrow" data-feather="chevron-down"></i>
+                        </a>
+                        <div class="collapse" id="advancedUI">
+                            <ul class="nav sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{ route('product.index') }}" class="nav-link">Products</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/advanced-ui/owl-carousel.html" class="nav-link">Owl carousel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/advanced-ui/sweet-alert.html" class="nav-link">Sweet Alert</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+          {{-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#advancedUI" role="button" aria-expanded="false" aria-controls="advancedUI">
               <i class="link-icon" data-feather="anchor"></i>
               <span class="link-title">Advanced UI</span>
@@ -160,7 +124,7 @@
                 </li>
               </ul>
             </div>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">
               <i class="link-icon" data-feather="inbox"></i>

@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Color;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Media;
 
 return new class extends Migration
 {
@@ -12,12 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('media', function (Blueprint $table) {
+        Schema::create('colors', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->nullable();
-            $table->string('src');
-            $table->string('name')->nullable();
-            $table->string('extension')->nullable();
+            $table->string('name');
+            $table->string('color_code');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('colors');
     }
 };

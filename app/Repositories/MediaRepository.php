@@ -93,5 +93,15 @@ class MediaRepository extends Repository
 
     }
 
+    public static function deleteByRequest(Media $media){
+
+        if(Storage::exists($media->src)){
+            Storage::delete($media->src);
+        }
+
+        $media->delete();
+
+    }
+
 
 }

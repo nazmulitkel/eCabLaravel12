@@ -1,11 +1,10 @@
 <?php
 
+use App\Models\Media;
+use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Media;
-use App\Models\Category;
-use App\Models\SubCategory;
 
 return new class extends Migration
 {
@@ -14,13 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_categories', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
-            $table->string('name');
-            $table->string('slug');
+        Schema::create('product_galleries', function (Blueprint $table) {
+            $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Media::class)->nullable()->constrained()->cascadeOnDelete();
-            $table->timestamps();
         });
     }
 
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_categories');
+        Schema::dropIfExists('product_galleries');
     }
 };
